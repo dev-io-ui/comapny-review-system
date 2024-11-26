@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company-review</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="form-container">
+    <h2>Company Review</h2>
+    <form id="feedback-form" onsubmit="handleFormSubmit(event)">
+      <!-- Company Name -->
+      <div class="form-group">
+        <label for="company-name">Company Name:</label>
+        <input type="text" id="company-name" name="companyName" placeholder="Enter company name" required>
+      </div>
+
+      <!-- Pros -->
+      <div class="form-group">
+        <label for="pros">Pros:</label>
+        <textarea id="pros" name="pros" rows="3" placeholder="Enter pros" required></textarea>
+      </div>
+
+      <!-- Cons -->
+      <div class="form-group">
+        <label for="cons">Cons:</label>
+        <textarea id="cons" name="cons" rows="3" placeholder="Enter cons" required></textarea>
+      </div>
+
+      <!-- Rating -->
+      <div class="form-group">
+        <label>Rating:</label>
+        <div class="star-rating">
+            <!-- Highest rating (5 stars) comes first -->
+            <input type="radio" id="star-5" name="rating" value="5">
+            <label for="star-5">★</label>
+            <input type="radio" id="star-4" name="rating" value="4">
+            <label for="star-4">★</label>
+            <input type="radio" id="star-3" name="rating" value="3">
+            <label for="star-3">★</label>
+            <input type="radio" id="star-2" name="rating" value="2">
+            <label for="star-2">★</label>
+            <input type="radio" id="star-1" name="rating" value="1">
+            <label for="star-1">★</label>
+          </div>
+          
+
+      <!-- Submit Button -->
+      <button type="submit" id="submit-button">Submit</button>
+    </form>
+    
+  </div>
+
+  <h1>Search Company Reviews</h1>
+
+  <form id="searchForm" onsubmit="handleGetData(event)">
+      <label for="companyName">Company Name:</label>
+      <input type="text" id="companyName" name="companyName" required>
+      <button type="submit">Search</button>
+  </form>
+
+  <div id="companyDetails">
+      <!-- Company details and reviews will be displayed here -->
+  </div>
+
+  <script src="index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>
